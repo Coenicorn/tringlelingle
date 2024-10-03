@@ -1,0 +1,27 @@
+{
+  "name": "tringlelingle",
+  "version": "1.0.0",
+  "description": "Some game project for my dumb ass study introductionperiod",
+  "main": "bin/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coenicorn/tringlelingle.git"
+  },
+  "author": "Coenicorn",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/coenicorn/tringlelingle/issues"
+  },
+  "homepage": "https://github.com/coenicorn/tringlelingle#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  },
+  "dependencies": {
+    "@dotenvx/dotenvx": "^1.14.2",
+    "express": "^4.21.0",
+    "typescript": "^5.6.2"
+  }
+}
