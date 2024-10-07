@@ -1,0 +1,25 @@
+<<<<<<< Updated upstream
+=======
+@import url(https://db.onlinewebfonts.com/c/14936bb7a4b6575fd2eee80a3ab52cc2?family=Feather+Bold);
+body {
+    font-family: "Feather Bold";
+}
+.topbar {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    color: #50B2D5;
+    align-items: center;
+    font-size: 30px;
+}
+.box1 {
+    width: 200px;
+    height: 100px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    background-color: aliceblue;
+  }
+>>>>>>> Stashed changes
