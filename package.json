@@ -4,7 +4,9 @@
   "description": "Some game project for my dumb ass study introductionperiod",
   "main": "bin/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "watch": "tsc -w",
+    "dev": "nodemon "
   },
   "repository": {
     "type": "git",
