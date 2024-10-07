@@ -13,7 +13,8 @@ body {
     border-top: #3176B1 solid 0px;
     border-bottom: #3176B1 solid 3px;
 }
-.topbar button{ 
+
+.topbar button { 
     font-size: 60px;
     background-color: #F1A23B;
     padding: 1%;
@@ -28,17 +29,22 @@ body {
 .topbar h1 {
     color: #50B2D5;
     margin-right: 20px;
-    font-size: 60px
+    font-size: 60px;
 }
+
 p { 
     font-size: 20px; 
-} 
+}
 
 .container { 
-    background-color: rgb(192, 192, 192); 
-    width: 80%; 
-    border-radius: 15px; 
-} 
+    background-color: rgb(192, 192, 192);
+    width: 80%;
+    border-radius: 15px;
+    z-index: 10;
+    padding: 20px;
+    text-align: center;
+     /* Zet de container onder de tekst met wat marge */
+}
 
 .skill { 
     background-color: rgb(116, 194, 92); 
@@ -46,27 +52,43 @@ p {
     padding: 1%; 
     text-align: right; 
     font-size: 20px; 
-    border-radius: 15px; 
-} 
+    border-radius: 15px;
+}
 
 .test-text {
     width: 500px;
-    margin-left:auto;
-    margin-right:auto;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
     padding: 50px;
-
+    position: relative;
+    float: left;
+    margin-left: 600px;
 }
 
 .test-text a {
-    margin-left:auto;
-    margin-right:auto;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
-    padding: 50px;
+    padding: 20px 50px;
     background-color: #50B2D5;
     border: 1px #50B2D5 solid;
     border-radius: 50px;
     color: #FAFCFF;
-    font-size: 100px;
+    font-size: 110px;
+}
+.play-totaal button {
+    background-color: #50B2D5; /* Verwijder de achtergrondkleur */
+    border: 1px #50B2D5 solid;
+    border-radius: 50px;
+    padding: 30px 40px;
+    align-content: center;
 }
 
+.play-totaal button img {
+    display: block; /* Zorgt ervoor dat er geen extra ruimte is rondom de afbeelding */
+    max-width: 100%; /* Zorg ervoor dat de afbeelding zich aanpast aan de knop */
+    height: auto; /* Behoud de verhoudingen van de afbeelding */
+    margin-left: 30px;
+}
