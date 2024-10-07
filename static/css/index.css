@@ -6,28 +6,48 @@ body {
 .topbar {
     display: flex;
     justify-content: center;
-    align-items: center; /* Om verticale centrering toe te voegen */
+    align-items: center; 
     max-width: 100%;
     width: 100%;
-    padding: 10px 10px;
-    border-top: #000000 solid 1px;
-    border-bottom: #000000 solid 1px;
+    padding: 0px 0px;
+    border-top: #3176B1 solid 0px;
+    border-bottom: #3176B1 solid 3px;
 }
 .topbar button{ 
-    font-size: xx-large;
+    font-size: 60px;
     background-color: #F1A23B;
     padding: 1%;
     border: 1px;
     border-radius: 50px;
     color: #FAFCFF;
     font-family: "Feather Bold";
+    width: 258px;
+    height: 85px;
 }
 
 .topbar h1 {
     color: #50B2D5;
-    margin-right: 20px; /* Ruimte tussen de items */
-    font-size: 50px
+    margin-right: 20px;
+    font-size: 60px
 }
+p { 
+    font-size: 20px; 
+} 
+
+.container { 
+    background-color: rgb(192, 192, 192); 
+    width: 80%; 
+    border-radius: 15px; 
+} 
+
+.skill { 
+    background-color: rgb(116, 194, 92); 
+    color: white; 
+    padding: 1%; 
+    text-align: right; 
+    font-size: 20px; 
+    border-radius: 15px; 
+} 
 
 .test-text {
     width: 500px;
@@ -49,3 +69,4 @@ body {
     color: #FAFCFF;
     font-size: 100px;
 }
+
