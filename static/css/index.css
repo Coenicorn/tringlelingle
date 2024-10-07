@@ -37,17 +37,22 @@ p {
 }
 
 .container { 
-    background-color: rgb(192, 192, 192);
     width: 80%;
     border-radius: 15px;
     z-index: 10;
     padding: 20px;
     text-align: center;
-     /* Zet de container onder de tekst met wat marge */
+}
+.container2 { 
+    width: 40%;
+    border-radius: 15px;
+    z-index: 10;
+    padding: 20px;
+    text-align: center;
 }
 
 .skill { 
-    background-color: rgb(116, 194, 92); 
+    background-color: #F1A23B; 
     color: white; 
     padding: 1%; 
     text-align: right; 
@@ -77,7 +82,9 @@ p {
     border-radius: 50px;
     color: #FAFCFF;
     font-size: 110px;
+    
 }
+
 .play-totaal button {
     background-color: #50B2D5; /* Verwijder de achtergrondkleur */
     border: 1px #50B2D5 solid;
@@ -91,4 +98,31 @@ p {
     max-width: 100%; /* Zorg ervoor dat de afbeelding zich aanpast aan de knop */
     height: auto; /* Behoud de verhoudingen van de afbeelding */
     margin-left: 30px;
+}
+.Mascotte{
+    float: left;
+    margin-left: 30px;
+}
+.test-text2 {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding: 50px;
+    position: relative;
+    float: left;
+    margin-left: 600px;
+}
+
+.test-text2 a {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding: 20px 50px;
+    background-color: #50B2D5;
+    border: 1px #50B2D5 solid;
+    border-radius: 50px;
+    color: #FAFCFF;
+    font-size: 110px;
 }
