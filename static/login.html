@@ -5,45 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TringleLingle</title>
     <link rel="stylesheet" href="./css/index.css">
-    <link href="https://db.onlinewebfonts.com/c/14936bb7a4b6575fd2eee80a3ab52cc2?family=Feather+Bold" rel="stylesheet">
-     <link rel="icon" href="images/Mascotte.png" width="200px">
+    <link href="https://db.onlinewebfonts.com/c/14936bb7a4b6575fd2eee80a3ab52cc2?family=Feather+Bold" rel="stylesheet" id="font">
+    <link rel="icon" href="images/Mascotte.png" id="RareVogel">
     <style>
-        .item1 { grid-area: main1; }
-        .item2 { grid-area: main2; }
-        .item3 { grid-area: main3; }
-        .item4 { grid-area: main4; }
-        .item5 { grid-area: main5; }
-        
-        .grid-container{
-          display: grid;
-          grid-template-areas:
-            'main1 main1 main1 main1 main1'
-            'main2 main3 main4'
-            'main 5';
-          gap: 10px;
-          background-color: #2196F3;
-          padding: 10px;
-        }
-        
-        .grid-container > div {
-          background-color: rgba(255, 255, 255, 0.8);
-          text-align: center;
-          padding: 20px 0;
-          font-size: 30px;
-        }
-    </style>
+      body {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        height: 100vh;
+      }
+      .topbar {
+        flex: 0 1 auto;
+        width: 100%;
+        align-items: center; 
+      }
+      #RareVogel {
+          height: auto;
+          width: 10%;
+        }     
+      #font {
+        font-family: 'Feather Bold';
+      }
+      .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto auto auto;
+        background-color: #2196F3;
+        padding: 10px;
+      }
+      .grid-item {
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+      }
+      .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto auto auto;
+        background-color: #2196F3;
+        padding: 10px;
+        flex-grow: 1;
+      }
+      </style>
     <div class="topbar">    
       <h1>TringleLingle</h1>
-      <img src="images/Mascotte.png" height="auto" width="100px">
+      <img src="images/Mascotte.png" alt="RareVogel" id="RareVogel"></a>
     </div>
 </head>
 <body>
-    <div class="grid-container">
-        <div class="item1">Main1</div>
-        <div class="item2">Main2</div>
-        <div class="item3">Main3</div>  
-        <div class="item4">Main4</div>
-        <div class="item5">Main5</div>
-      </div>    
+  <div class="grid-container">
+    <div class="grid-item">1</div>
+    <div class="grid-item">2</div>
+    <div class="grid-item">3</div>
+    <div class="grid-item">4</div>
+    <div class="grid-item">5</div>
+    <div class="grid-item">6</div>
+    <div class="grid-item">7</div>
+    <div class="grid-item">8</div>
+    <div class="grid-item">9</div>
+  </div>   
 </body>
 </html>
