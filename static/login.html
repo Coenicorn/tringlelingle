@@ -8,28 +8,21 @@
     <link href="https://db.onlinewebfonts.com/c/14936bb7a4b6575fd2eee80a3ab52cc2?family=Feather+Bold" rel="stylesheet" id="font">
     <link rel="icon" href="images/Mascotte.png" id="RareVogel">
     <style>
-      * {
-        box-sizing: border-box; /* Include padding and border in element's total width and height */
-      }
       body {
         display: flex;
         flex-direction: column;
         margin: 0;
         height: 100vh;
-        overflow-x: hidden; /* Prevent horizontal overflow */
       }
       .topbar {
-        display: flex;
         flex: 0 1 auto;
         width: 100%;
         align-items: center;
-        justify-content: space-between; /* Ensure content is spaced out */
-        padding: 10px; /* Add some padding */
       }
       #RareVogel {
-        height: auto;
-        width: 10%;
-      }     
+          height: auto;
+          width: 10%;
+        }     
       #font {
         font-family: 'Feather Bold', sans-serif;
       }
@@ -39,43 +32,39 @@
         grid-template-rows: auto auto auto;
         background-color: #2196F3;
         padding: 10px;
-        flex-grow: 1;
       }
       .grid-item {
         background-color: rgba(255, 255, 255, 0.8);
         border: 1px solid rgba(0, 0, 0, 0.8);
         padding: 20px;
-        font-size: 30px;
+        font-size: 100px;
         text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
       }
-      @media (max-width: 600px) {
-        .grid-container {
-          grid-template-columns: auto;
-        }
-        .topbar {
-          flex-direction: column; /* Stack items vertically on small screens */
-          align-items: center;
-        }
-        #RareVogel {
-          width: 50px; /* Adjust size for smaller screens */
-        }
+      .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto auto auto;
+        background-color: #2196F3;
+        padding: 10px;
+        flex-grow: 1;
       }
-    </style>
+      </style>
+    <div class="topbar">    
+      <h1>TringleLingle</h1>
+      <img src="images/Mascotte.png" alt="RareVogel" id="RareVogel"></a>
+    </div>
 </head>
 <body>
-  <div class="topbar">    
-    <h1>TringleLingle</h1>
-    <img src="images/Mascotte.png" height="auto" width="100px">
-  </div>
   <div class="grid-container">
     <div class="grid-item">1</div>
     <div class="grid-item">2</div>
     <div class="grid-item">3</div>
     <div class="grid-item">4</div>
-    <!-- Add more grid items as needed -->
-  </div>
+    <div class="grid-item">5</div>
+    <div class="grid-item">6</div>
+    <div class="grid-item">7</div>
+    <div class="grid-item">8</div>
+    <div class="grid-item">9</div>
+  </div>   
 </body>
 </html>
