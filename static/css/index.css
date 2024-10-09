@@ -149,6 +149,9 @@ p {
 form {
     background-color: #50B2D5;
     border-radius: 5px;
+    width: 60%;
+    margin: auto;
+
 }
 
 .next {
