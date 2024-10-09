@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="icon" href="images/Mascotte.png" width="200px">
+    <link href="https://db.onlinewebfonts.com/c/14936bb7a4b6575fd2eee80a3ab52cc2?family=Feather+Bold" rel="stylesheet">
+    <title>ICT lingo</title>
+</head>
+<script>
+    let correctCombination = ["drag1", "drag3", "drag4", "drag2"];
+    let userSelection = [];
+
+    function allowDrop(ev) {
+        ev.preventDefault();
+    }
+
+    function drag(ev) {
+        ev.dataTransfer.setData("text", ev.target.id);
+    }
+
+    function drop(ev) {
+        ev.preventDefault();
+        let data = ev.dataTransfer.getData("text");
+        
+        if (ev.target.children.length === 0) {
+            ev.target.appendChild(document.getElementById(data));
+            updateUserSelection();
+        }
+    }
+
+    function updateUserSelection() {
+        userSelection = [];
+        const antwoordBoxes = document.querySelectorAll(".antwoordBox");
+        antwoordBoxes.forEach(box => {
+            let img = box.querySelector("img");
+            if (img) {
+                userSelection.push(img.id);
+            } else {
+                userSelection.push(null);
+            }
+        });
+    }
+    <!--hier moet het geluid komen-->
+    function checkAnswer() {
+        var resultElement = document.getElementById("resultMessage");
+        if (JSON.stringify(userSelection) === JSON.stringify(correctCombination)) {
+            resultElement.innerHTML = "Correct answer!";
+            resultElement.style.color = "green";
+        } else {
+            resultElement.innerHTML = "Wrong answer. Try again!";
+            resultElement.style.color = "red";
+        }
+    }
+</script>
+
+<style>
+    body {
+        font-family: "Feather Bold", Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        height: 100vh;
+        margin: 0;
+    }
+    
+    .vraagBox {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 1000px;
+        height: 200px;
+        background-color: #50B2D5;
+        margin-top: 50px;
+        text-align: center;
+        border: 1px #50B2D5 solid;
+        border-radius: 50px;
+    }
+    
+    .antwoordBox {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 150px;
+        width: 150px;
+        background-color: white;
+        text-align: center;
+        border: 1px #1d414f solid;
+        border-radius: 50px;
+    }
+
+    .optiesContainer {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .optieBox {
+        height: 150px;
+        width: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #1d414f;
+        border: 1px #1d414f solid;
+        border-radius: 50px;
+    }
+
+    .knoppenContainer {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 20px;
+        box-sizing: border-box;
+        margin-top: 50px;
+    }     
+
+    .volgendeKnop {
+        font-size: 30px;
+        background-color: #F1A23B;
+        padding: 1%;
+        border: none;
+        border-radius: 50px;
+        color: #FAFCFF;
+        font-family: "Feather Bold";
+        width: 275px;
+        height: 85px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .submitBox {
+        font-size: 30px;
+        background-color: #F1A23B;
+        padding: 1%;
+        border: none;
+        border-radius: 50px;
+        color: #FAFCFF;
+        font-family: "Feather Bold";
+        width: 275px;
+        height: 85px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .resultMessage {
+        font-size: 24px;
+        margin-top: 20px;
+    }
+</style>
+
+<body>
+    <div class="topbar">
+        <h1>ICTlingo</h1>
+        <img src="images/Mascotte.png" height="auto" width="100px">
+    </div>
+    <h1 class="center">Dit is een hele belangrijke vraag: ben je gay.</h1>
+    
+    <div class="vraagBox">
+        <div class="antwoordBox" id="antwoord1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div class="antwoordBox" id="antwoord2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div class="antwoordBox" id="antwoord3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div class="antwoordBox" id="antwoord4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    </div>
+    
+    <div class="optiesContainer">
+        <div id="optie1" class="optieBox" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <img id="drag1" draggable="true" ondragstart="drag(event)" src="images/testpic.png" height="100px" width="100px">
+        </div>
+        <div id="optie2" class="optieBox" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <img id="drag2" draggable="true" ondragstart="drag(event)" src="images/manMetSlechteDuim.jpg" height="100px" width="100px">
+        </div>
+        <div id="optie3" class="optieBox" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <img id="drag3" draggable="true" ondragstart="drag(event)" src="images/Mascotte.png" height="100px" width="100px">
+        </div>
+        <div id="optie4" class="optieBox" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <img id="drag4" draggable="true" ondragstart="drag(event)" src="images/Polygon 1.png" height="100px" width="100px">
+        </div>
+    </div>
+
+    <div id="resultMessage" class="resultMessage"></div>
+
+    <div class="knoppenContainer">
+        <div class="submitBox" onclick="checkAnswer()">Submit</div>
+        <div class="volgendeKnop" onclick="window.location.href='vraag 2 back end.html'">Volgende</div>
+    </div>
+</body>
+</html>
