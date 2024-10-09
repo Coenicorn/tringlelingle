@@ -29,7 +29,11 @@ body {
 .topbar h1 {
     color: #50B2D5;
     margin-right: 20px;
+<<<<<<< Updated upstream
     font-size: 150px;
+=======
+    font-size: 50px;
+>>>>>>> Stashed changes
 }
 
 p {
@@ -129,6 +133,7 @@ p {
     color: #FAFCFF;
     font-size: 110px;
 }
+<<<<<<< Updated upstream
 
 .botbar {
     margin-top: 100%;
@@ -191,4 +196,8 @@ h2 {
 
 input {
     margin-bottom: 20px;
+=======
+.center{
+    text-align: center;
+>>>>>>> Stashed changes
 }
