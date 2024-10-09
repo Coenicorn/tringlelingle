@@ -9,18 +9,49 @@
     <title>ICT lingo</title>
 </head>
 <script>
+    let correctCombination = ["drag1", "drag3", "drag4", "drag2"];
+    let userSelection = [];
+
     function allowDrop(ev) {
-      ev.preventDefault();
+        ev.preventDefault();
     }
-    
+
     function drag(ev) {
-      ev.dataTransfer.setData("text", ev.target.id);
+        ev.dataTransfer.setData("text", ev.target.id);
     }
-    
+
     function drop(ev) {
-      ev.preventDefault();
-      var data = ev.dataTransfer.getData("text");
-      ev.target.appendChild(document.getElementById(data));
+        ev.preventDefault();
+        let data = ev.dataTransfer.getData("text");
+        
+        if (ev.target.children.length === 0) {
+            ev.target.appendChild(document.getElementById(data));
+            updateUserSelection();
+        }
+    }
+
+    function updateUserSelection() {
+        userSelection = [];
+        const antwoordBoxes = document.querySelectorAll(".antwoordBox");
+        antwoordBoxes.forEach(box => {
+            let img = box.querySelector("img");
+            if (img) {
+                userSelection.push(img.id);
+            } else {
+                userSelection.push(null);
+            }
+        });
+    }
+    <!--hier moet het geluid komen-->
+    function checkAnswer() {
+        var resultElement = document.getElementById("resultMessage");
+        if (JSON.stringify(userSelection) === JSON.stringify(correctCombination)) {
+            resultElement.innerHTML = "Correct answer!";
+            resultElement.style.color = "green";
+        } else {
+            resultElement.innerHTML = "Wrong answer. Try again!";
+            resultElement.style.color = "red";
+        }
     }
 </script>
 
@@ -89,7 +120,7 @@
         margin-top: 50px;
     }     
 
-    .volgendeKnop{
+    .volgendeKnop {
         font-size: 30px;
         background-color: #F1A23B;
         padding: 1%;
@@ -104,7 +135,8 @@
         justify-content: center;
         align-items: center;
     }
-    .submitBox{
+    
+    .submitBox {
         font-size: 30px;
         background-color: #F1A23B;
         padding: 1%;
@@ -118,6 +150,12 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        cursor: pointer;
+    }
+
+    .resultMessage {
+        font-size: 24px;
+        margin-top: 20px;
     }
 </style>
 
@@ -129,10 +167,10 @@
     <h1 class="center">Dit is een hele belangrijke vraag: ben je gay.</h1>
     
     <div class="vraagBox">
-        <div class="antwoordBox" id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div class="antwoordBox" id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div class="antwoordBox" id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div class="antwoordBox" id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div class="antwoordBox" id="antwoord1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div class="antwoordBox" id="antwoord2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div class="antwoordBox" id="antwoord3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div class="antwoordBox" id="antwoord4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     </div>
     
     <div class="optiesContainer">
@@ -150,10 +188,11 @@
         </div>
     </div>
 
+    <div id="resultMessage" class="resultMessage"></div>
+
     <div class="knoppenContainer">
-        <div class="submitBox">Submit</div>
-        <div class="volgendeKnop" onclick="window.location.href='https://kanikeenkortebroekaan.nl';">Volgende</div>
+        <div class="submitBox" onclick="checkAnswer()">Submit</div>
+        <div class="volgendeKnop" onclick="window.location.href='vraag 2 back end.html'">Volgende</div>
     </div>
-    
 </body>
 </html>
