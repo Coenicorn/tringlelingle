@@ -29,7 +29,7 @@ body {
 .topbar h1 {
     color: #50B2D5;
     margin-right: 20px;
-    font-size: 60px;
+    font-size: 150px;
 }
 
 p { 
@@ -86,17 +86,17 @@ p {
 }
 
 .play-totaal button {
-    background-color: #50B2D5; /* Verwijder de achtergrondkleur */
+    background-color: #50B2D5; 
     border: 1px #50B2D5 solid;
     border-radius: 50px;
-    padding: 30px 40px;
-    align-content: center;
+    padding: 40px 40px;
+    float: right;
+    margin-right: 350px;
 }
 
 .play-totaal button img {
-    display: block; /* Zorgt ervoor dat er geen extra ruimte is rondom de afbeelding */
-    max-width: 100%; /* Zorg ervoor dat de afbeelding zich aanpast aan de knop */
-    height: auto; /* Behoud de verhoudingen van de afbeelding */
+    display: block; 
+    max-width: 100%;  
     margin-left: 30px;
 }
 .Mascotte{
