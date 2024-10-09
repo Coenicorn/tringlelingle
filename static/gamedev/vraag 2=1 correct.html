@@ -9,11 +9,10 @@
     <link href="https://db.onlinewebfonts.com/c/14936bb7a4b6575fd2eee80a3ab52cc2?family=Feather+Bold" rel="stylesheet">
     <link rel="icon" href="images/Mascotte.png" width="200px">
     <style>
-        /* Voeg hier extra CSS toe voor het centreren van de feedback */
         #feedback {
             margin-top: 20px;
             font-size: 18px;
-            text-align: center; /* Centraal uitlijnen van de tekst */
+            text-align: center;
         }
     </style>
 </head>
@@ -26,26 +25,24 @@
 
     <h2 style="color: #FAFCFF; font-size: 35px;">Vraag 1</h2>
     <form id="quizForm">
-        <p class="vraag" style="font-size: 35px;">Welke beroepsrol zou dit zeggen: Ik heb de playermovement aangepast zodat hij sneller op de y-as beweegt.</p>
+        <p class="vraag" style="font-size: 35px;">Waar worden meeste grote budget games ingebouwd?</p>
         <input type="radio" id="artist" name="fav_language" value="Game artist">
-        <label for="artist">Game artist</label><br>
+        <label for="artist">Game Engines</label><br>
         <input type="radio" id="engine" name="fav_language" value="Engine programmer">
-        <label for="engine">Engine programmer</label><br>
+        <label for="engine">Los script</label><br>
         <input type="radio" id="gameplay" name="fav_language" value="Gameplay programmer">
-        <label for="gameplay">Gameplay programmer</label><br>
+        <label for="gameplay">Microsoft word</label><br>
         <input class="submit" type="submit" value="Lever in">
     </form>
 
-    <!-- Audiotags voor correct en incorrect geluid -->
     <audio id="correctSound" src="mp3/Correct.mp3" preload="auto"></audio>
     <audio id="incorrectSound" src="mp3/Wrong.mp3" preload="auto"></audio>
 
-    <div id="feedback"></div> <!-- Feedback div blijft hier -->
-
     <div id="feedback"></div> 
-    <a href="3=correct vraag 1.html">
+    <a href="vraag 4=2 correct.html">
         <input class="next" type="submit" value="Volgende">
     </a>
+
 
     <script>
         document.getElementById('quizForm').addEventListener('submit', function (e) {
@@ -60,7 +57,7 @@
                 feedbackDiv.textContent = 'Selecteer een antwoord!';
                 feedbackDiv.style.color = 'red';
                 incorrectSound.play();  // Geluid voor geen antwoord
-            } else if (selected.value === 'Engine programmer') { // Hier geef je aan wat het correcte antwoord is
+            } else if (selected.value === 'Game artist') { // Eerste antwoord is nu correct
                 feedbackDiv.textContent = 'Correct! Dat is het juiste antwoord.';
                 feedbackDiv.style.color = 'green';
                 correctSound.play();  // Geluid voor correct antwoord
