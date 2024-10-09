@@ -2,6 +2,9 @@ body {
     font-family: "Feather Bold";
     background-color: #FAFCFF;
 }
+h2 {
+font-size: 35px;
+}
 
 .topbar {
     display: flex;
@@ -148,9 +151,12 @@ p {
 
 form {
     background-color: #50B2D5;
-    border-radius: 5px;
+    border-radius: 50px;
     width: 60%;
     margin: auto;
+    font-family: "Feather Bold";
+    font-size: 35px;
+    color: #FAFCFF; 
 
 }
 
@@ -161,7 +167,7 @@ form {
     padding: 1%;
     border: 1px;
     border-radius: 50px;
-    color: black;
+    color: #FAFCFF;
     font-family: "Feather Bold";
     margin-top: 2rem;
     margin-left: 90%;
@@ -174,7 +180,7 @@ form {
     padding: 1%;
     border: 1px;
     border-radius: 50px;
-    color: black;
+    color: #FAFCFF;
     font-family: "Feather Bold";
     margin-left: 47%;
 
