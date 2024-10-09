@@ -9,10 +9,11 @@
     <link href="https://db.onlinewebfonts.com/c/14936bb7a4b6575fd2eee80a3ab52cc2?family=Feather+Bold" rel="stylesheet">
     <link rel="icon" href="images/Mascotte.png" width="200px">
     <style>
+        /* Voeg hier extra CSS toe voor het centreren van de feedback */
         #feedback {
             margin-top: 20px;
             font-size: 18px;
-            text-align: center;
+            text-align: center; /* Centraal uitlijnen van de tekst */
         }
     </style>
 </head>
@@ -25,25 +26,27 @@
 
     <h2 style="color: #FAFCFF; font-size: 35px;">Vraag 1</h2>
     <form id="quizForm">
-        <p class="vraag" style="font-size: 35px;">Welke worden de meeste games ingebouwd?</p>
-        <input type="radio" id="artist" name="fav_language" value="Game artist">
-        <label for="artist">Game Engines</label><br>
-        <input type="radio" id="engine" name="fav_language" value="Engine programmer">
-        <label for="engine">Los script</label><br>
-        <input type="radio" id="gameplay" name="fav_language" value="Gameplay programmer">
-        <label for="gameplay">Microsoft word</label><br>
+        <p class="vraag" style="font-size: 35px;">Welke beroepsrol zou dit zeggen: Ik ben bezig met het balanceren van een health-points systeem voor vijanden.</p>
+        <input type="radio" id="html" name="fav_language" value="HTML">
+        <label for="html">Engine programmer</label><br>
+        <input type="radio" id="css" name="fav_language" value="CSS">
+        <label for="css">Game artist</label><br>
+        <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+        <label for="javascript">Game designer</label><br>
         <input class="submit" type="submit" value="Lever in">
     </form>
 
+    <!-- Audiotags voor correct en incorrect geluid -->
     <audio id="correctSound" src="mp3/Correct.mp3" preload="auto"></audio>
     <audio id="incorrectSound" src="mp3/Wrong.mp3" preload="auto"></audio>
 
+    <div id="feedback"></div> <!-- Feedback div blijft hier -->
+
     <div id="feedback"></div> 
-    <a href="vraag 8=3 correct.html">
+    <a href="vraag 9=1 correct.html">
         <input class="next" type="submit" value="Volgende">
     </a>
-
-
+    
     <script>
         document.getElementById('quizForm').addEventListener('submit', function (e) {
             e.preventDefault();
@@ -57,7 +60,7 @@
                 feedbackDiv.textContent = 'Selecteer een antwoord!';
                 feedbackDiv.style.color = 'red';
                 incorrectSound.play();  // Geluid voor geen antwoord
-            } else if (selected.value === 'Game artist') { // Eerste antwoord is nu correct
+            } else if (selected.value === 'JavaScript') {
                 feedbackDiv.textContent = 'Correct! Dat is het juiste antwoord.';
                 feedbackDiv.style.color = 'green';
                 correctSound.play();  // Geluid voor correct antwoord

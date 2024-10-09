@@ -9,7 +9,7 @@
     <title>ICT lingo</title>
 </head>
 <script>
-    let correctCombination = ["drag4", "drag2", "drag3", "drag1"];
+    let correctCombination = ["drag3", "drag1", "drag4", "drag2"];
     let userSelection = [];
 
     function allowDrop(ev) {
@@ -42,15 +42,21 @@
             }
         });
     }
-    <!--hier moet het geluid komen-->
+
+    // Check the answer and play sound accordingly
     function checkAnswer() {
         var resultElement = document.getElementById("resultMessage");
+        const correctSound = document.getElementById('correctSound');
+        const incorrectSound = document.getElementById('incorrectSound');
+
         if (JSON.stringify(userSelection) === JSON.stringify(correctCombination)) {
-            resultElement.innerHTML = "Correct answer!";
+            resultElement.innerHTML = "Correct! Dat is het juiste antwoord!";
             resultElement.style.color = "green";
+            correctSound.play();  // Play correct answer sound
         } else {
-            resultElement.innerHTML = "Wrong answer. Try again!";
+            resultElement.innerHTML = "Fout, jij ongelofelijke droeftoeter!";
             resultElement.style.color = "red";
+            incorrectSound.play();  // Play incorrect answer sound
         }
     }
 </script>
@@ -175,24 +181,29 @@
     
     <div class="optiesContainer">
         <div id="optie1" class="optieBox" ondrop="drop(event)" ondragover="allowDrop(event)">
-            <img id="drag1" draggable="true" ondragstart="drag(event)" src="images/gameDev3-4.png" height="50px" width="100px">
+            <img id="drag1" draggable="true" ondragstart="drag(event)" src="images/GameDev2-2.png" height="50px" width="100px">
         </div>
         <div id="optie2" class="optieBox" ondrop="drop(event)" ondragover="allowDrop(event)">
-            <img id="drag2" draggable="true" ondragstart="drag(event)" src="images/gameDev3-2.png" height="50px" width="100px">
+            <img id="drag2" draggable="true" ondragstart="drag(event)" src="images/GameDev2-4.png" height="50px" width="100px">
         </div>
         <div id="optie3" class="optieBox" ondrop="drop(event)" ondragover="allowDrop(event)">
-            <img id="drag3" draggable="true" ondragstart="drag(event)" src="images/gameDev3-3.png" height="50px" width="100px">
+            <img id="drag3" draggable="true" ondragstart="drag(event)" src="images/GameDev2-1.png" height="50px" width="100px">
         </div>
         <div id="optie4" class="optieBox" ondrop="drop(event)" ondragover="allowDrop(event)">
-            <img id="drag4" draggable="true" ondragstart="drag(event)" src="images/GameDev3-1.png" height="50px" width="100px">
+            <img id="drag4" draggable="true" ondragstart="drag(event)" src="images/GameDev2-3.png" height="50px" width="100px">
         </div>
     </div>
 
     <div id="resultMessage" class="resultMessage"></div>
 
     <div class="knoppenContainer">
-        <div class="submitBox" onclick="checkAnswer()">Submit</div>
-        <div class="volgendeKnop" onclick="window.location.href='vraag 2 back end.html'">Volgende</div>
+        <div class="submitBox" onclick="checkAnswer()">Vul in</div>
+        <div class="volgendeKnop" onclick="window.location.href='/static/gamedev/vraag 7=1 correct.html'">Volgende</div>
     </div>
+
+    <!-- Audiotags voor correct en incorrect geluid -->
+    <audio id="correctSound" src="/static/gamedev/mp3/Correct.mp3" preload="auto"></audio>
+    <audio id="incorrectSound" src="/static/gamedev/mp3/Wrong.mp3" preload="auto"></audio>
+
 </body>
 </html>
