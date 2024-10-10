@@ -150,11 +150,11 @@
       const email = document.getElementById('email').value;
       const password = document.getElementById('password').value;
       if (email === 'demo@demo.com' && password === 'demo') {
-        window.location.href = 'http://127.0.0.1:5500/static/index.html';
+        window.open('/index.html', '_blank');
       } else {
         alert('Invalid credentials');
       }
     }
   </script>
 </body>
-</html>
+</html> 
