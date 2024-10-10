@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="./css/index.css">
     <link href="https://db.onlinewebfonts.com/c/14936bb7a4b6575fd2eee80a3ab52cc2?family=Feather+Bold" rel="stylesheet" id="font">
     <link rel="icon" href="images/Mascotte.png" id="RareVogel">
-    <link rel="icon" href="images/Mascotte copy.png" id="RareVogel2">
     <style>
       * {
         box-sizing: border-box;
@@ -19,27 +18,29 @@
         height: 100vh;
         overflow-x: hidden;
         font-family: 'Feather Bold', sans-serif;
-      }
-      .topbar {
-        display: flex;
-        flex: 0 1 auto;
-        width: 100%;
-        align-items: center;
-        justify-content: space-between;
-        padding: 10px;
-      }
-      #RareVogel2 {
-        height: auto;
-        width: 10%;
-      }
-      body {
         user-select: none;
         overflow-y: hidden;
-        display: flex;
         justify-content: center;
         align-items: center;
         background: hsl(218deg 50% 91%);
-        height: 100vh;
+      }
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding-top: 0px;
+        margin-bottom: 25px;
+      }
+      .topbar h1 {
+        margin: 0px;
+        padding: 10px;
+        font-size: 2.5em;
+      }
+      #RareVogel, #RareVogel2 {
+        height: 50px;
+        width: auto;
+        margin-left: 10px;
       }
       .screen-1 {
         background: hsl(213deg 85% 97%);
@@ -95,7 +96,7 @@
         font-size: 0.7em;
         color: hsl(0deg 0% 37%);
         gap: 14em;
-        padding-bottom: 10em;
+        padding-bottom: 1em;
       }
       .screen-1 .footer span {
         cursor: pointer;
@@ -103,7 +104,6 @@
       button {
         cursor: pointer;
       }
-      /* Add this CSS rule */
       .screen-1 img[src="images/Mascotte.png"] {
         width: 50 px;
         height: 100%;
@@ -111,7 +111,9 @@
       #screen-1-icon {
         align-self: center;
         width: 100px;
-        heigiht: 100%;
+        height: 100%;
+        margin: 10px;
+        margin-bottom: -10px;
       }
     </style>
 </head>
@@ -122,26 +124,37 @@
   </div>
   <div class="screen-1">
     <img src="images/Mascotte.png" alt="Logo" class="logo" id="screen-1-icon">
-    <div class="email">
+    <div class="email" id="email-field">
       <label for="email">Emailadres</label>
       <div class="sec-2">
         <ion-icon name="mail-outline"></ion-icon>
-        <input type="email" name="email" placeholder="jouw@email.nl">
+        <input type="email" name="email" id="email" placeholder="jouw@email.nl">
       </div>
     </div>
     <div class="password">
       <label for="password">Wachtwoord</label>
       <div class="sec-2">
         <ion-icon name="lock-closed-outline"></ion-icon>
-        <input class="pas" type="password" name="password" placeholder="············">
+        <input class="pas" type="password" name="password" id="password" placeholder="············">
         <ion-icon class="show-hide" name="eye-outline"></ion-icon>
       </div>
     </div>
-    <button class="login">Login</button>
+    <button class="login" onclick="login()">Inloggen</button>
     <div class="footer">
       <span>Registreren</span>
       <span>Wachtwoord vergeten?</span>
     </div>
   </div>
+  <script>
+    function login() {
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      if (email === 'demo@demo.com' && password === 'demo') {
+        window.location.href = 'http://127.0.0.1:5500/static/index.html';
+      } else {
+        alert('Invalid credentials');
+      }
+    }
+  </script>
 </body>
 </html>
