@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TringleLingle</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link href="https://db.onlinewebfonts.com/c/14936bb7a4b6575fd2eee80a3ab52cc2?family=Feather+Bold" rel="stylesheet">
+    <link rel="icon" href="images/Mascotte.png" width="200px">
+    <style>
+        #feedback {
+            margin-top: 20px;
+            font-size: 18px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="topbar">
+        <h1>TringleLingle</h1>
+        <img src="images/Mascotte.png" height="auto" width="100px">
+    </nav>
+
+    <h2 style="color: #FAFCFF; font-size: 35px;">Vraag 1</h2>
+    <form id="quizForm">
+        <p class="vraag" style="font-size: 35px;">Waar worden meeste grote budget games ingebouwd?</p>
+        <input type="radio" id="artist" name="fav_language" value="Game artist">
+        <label for="artist">Game Engines</label><br>
+        <input type="radio" id="engine" name="fav_language" value="Engine programmer">
+        <label for="engine">Los script</label><br>
+        <input type="radio" id="gameplay" name="fav_language" value="Gameplay programmer">
+        <label for="gameplay">Microsoft word</label><br>
+        <input class="submit" type="submit" value="Lever in">
+    </form>
+
+    <audio id="correctSound" src="mp3/Correct.mp3" preload="auto"></audio>
+    <audio id="incorrectSound" src="mp3/Wrong.mp3" preload="auto"></audio>
+
+    <div id="feedback"></div> 
+    <a href="/static/vraag 3.html">
+        <input class="next" type="submit" value="Volgende">
+    </a>
+
+
+    <script>
+        document.getElementById('quizForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const selected = document.querySelector('input[name="fav_language"]:checked');
+            const feedbackDiv = document.getElementById('feedback');
+            
+            const correctSound = document.getElementById('correctSound');
+            const incorrectSound = document.getElementById('incorrectSound');
+
+            if (!selected) {
+                feedbackDiv.textContent = 'Selecteer een antwoord!';
+                feedbackDiv.style.color = 'red';
+                incorrectSound.play();  // Geluid voor geen antwoord
+            } else if (selected.value === 'Game artist') { // Eerste antwoord is nu correct
+                feedbackDiv.textContent = 'Correct! Dat is het juiste antwoord.';
+                feedbackDiv.style.color = 'green';
+                correctSound.play();  // Geluid voor correct antwoord
+            } else {
+                feedbackDiv.textContent = 'Fout, jij ongelofelijke droeftoeter!';
+                feedbackDiv.style.color = 'red';
+                incorrectSound.play();  // Geluid voor fout antwoord
+            }
+        });
+    </script>
+
+</body>
+
+</html>
